@@ -13,8 +13,12 @@ div {
     height: 100%;
     background-color: aqua;
 }
-#hello, h1 {
-    color: aqua;
+table {
+
+ 
+}
+h1 {
+    color: blue;
     font-size: 50px;
     vertical-align: middle;
     text-align: center;
@@ -23,4 +27,28 @@ div {
 .box {
     height: 100px;
     background-color: aqua;
+}
+td {
+    height: 100px;
+    width: 100px;
+    alignment-adjust: middle;
+    text-align: center;
+}
+
+.hit {
+    visibility: hidden;
+}
+
+#a00, #1, #a{
+    background: orange;
+    color: black;
+}
+
+.outer {
+    background-color: orange;
+    color: white;
+}
+.laser {
+    color:white;
+    background-color: blue;
 }
