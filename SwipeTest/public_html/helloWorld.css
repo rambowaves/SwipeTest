@@ -10,12 +10,12 @@ and open the template in the editor.
 
 div {
     width: 100%;
-    height: 100%;
-    background-color: aqua;
+    /* height: 80px; */
+    /*background-color: aqua;*/
 }
 table {
-
- 
+    margin: auto auto auto auto;
+    size: auto;
 }
 h1 {
     color: blue;
@@ -29,8 +29,8 @@ h1 {
     background-color: aqua;
 }
 td {
-    height: 100px;
-    width: 100px;
+    height: 30px;
+    width: 50px;
     alignment-adjust: middle;
     text-align: center;
 }
@@ -51,4 +51,17 @@ td {
 .laser {
     color:white;
     background-color: blue;
+}
+
+.left-right {
+    color: blue;
+}
+
+.up-down {
+    color: pink;
+}
+
+.avatar {
+    background-color: black;
+    color: white;
 }
