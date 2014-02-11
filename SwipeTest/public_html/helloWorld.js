@@ -5,26 +5,27 @@
  */
 
 document.write('<h1>Laser Gate</h1><div class="laserGate"><table border="0" cellspacing = "0" cellpadding = "0" id="a">');
-
-for (i = 0; i < 9; i++) {
+var numCols = 8;
+var numRows = 9;
+for (i = 0; i <= numRows; i++) {
     document.write("<tr id='row'" + i + ">");
-    for (j = 0; j < 9; j++) {
+    for (j = 0; j <= numCols; j++) {
         if (j === 0) {
             if (i === 0) {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class='outer down right'> " + i + "   " + j + "</td>");
             }
-            else if (i === 8) {
+            else if (i === numRows) {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class='outer up right'> " + i + "   " + j + "</td>");
             }
             else {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class = 'outer up down' > " + i + "   " + j + "</td>");
             }
         }
-        else if (j === 8) {
+        else if (j === numCols) {
             if (i === 0) {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class='outer down left'> " + i + "   " + j + "</td>");
             }
-            else if (i === 8) {
+            else if (i === numRows) {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class='outer up left'> " + i + "   " + j + "</td>");
             }
             else {
@@ -32,7 +33,7 @@ for (i = 0; i < 9; i++) {
             }
         }
         else {
-            if (i === 0 | i === 8) {
+            if (i === 0 | i === numRows) {
                 document.write("<td id= '" + i.toString() + j.toString() + "' class = 'outer right left' > " + i + "   " + j + "</td>");
             }
             else {
@@ -47,8 +48,8 @@ for (i = 0; i < 9; i++) {
 
 $("#00").text("laser").addClass("laser");
 $("#60").text("laser").addClass("laser");
-$("#38").text("laser").addClass("laser");
-$("#84").addClass("avatar");
+$("#3" + numRows).text("laser").addClass("laser");
+$("#" + numRows + "4").addClass("avatar");
 document.write('</table>');
 
 $(function() {
@@ -66,7 +67,7 @@ $(function() {
 
             var end = parseInt(start, 10);
             if ($("#" + start + "").hasClass('right') && direction === 'right'.toString()) {
-                col = (moveSquares + col > 8) ? '8' : (col + moveSquares);
+                col = (moveSquares + col > numCols) ? numCols.toString() : (col + moveSquares);
             }
             else if ($("#" + start + "").hasClass('left') && direction === 'left'.toString()) {
                 col = (col - moveSquares < 0) ? '0' : (col - moveSquares);
@@ -75,7 +76,7 @@ $(function() {
                 row = (row - moveSquares < 0) ? '0' : (row - moveSquares);
             }
             else if ($("#" + start + "").hasClass('down') && direction === 'down'.toString()) {
-                row = (row + moveSquares > 8) ? '8' : (row + moveSquares);
+                row = (row + moveSquares > numRows) ? numRows.toString() : (row + moveSquares);
             }
             end = row.toString() + col.toString();
 //            $("h1").text(Math.floor(end / 10) + "   " + end % 10 + "  " + end);
